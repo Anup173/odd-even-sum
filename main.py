@@ -11,14 +11,13 @@ def homepage():
 def result():
     u_input1 = request.form.get("num1")
     u_input2 = request.form.get("num2")
-     u_input3 = request.form.get("num3")
+    u_input3 = request.form.get("num3")
     u_input4 = request.form.get("num4")  
-   u_input5 = request.form.get("num5")
-    if not u_input:
-        return redirect("/")
-    odd = odd_sum(int(u_input1,u_input2,u_input3,u_input4,u_input5))
-    even=even_sum(int(u_input1,u_input2,u_input3,u_input4,u_input5))
-    return render_template("result.html", fib_num = odd, fib_num2=even)
+    u_input5 = request.form.get("num5")
+  
+    odd =odd_sum(int(u_input1),int(u_input2),int(u_input3),int(u_input4),int(u_input5))
+    even=even_sum(int(u_input1),int(u_input2),int(u_input3),int(u_input4),int(u_input5))
+    return render_template("result.html", sum_odd = odd, sum_even=even)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
